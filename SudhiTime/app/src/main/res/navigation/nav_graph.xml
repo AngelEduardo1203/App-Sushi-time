@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/finicio">
+
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.example.sudhitime.Menu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menu_to_pedido"
+            app:destination="@id/pedido" />
+    </fragment>
+    <fragment
+        android:id="@+id/pedido"
+        android:name="com.example.sudhitime.Pedido"
+        android:label="fragment_pedido"
+        tools:layout="@layout/fragment_pedido" >
+        <action
+            android:id="@+id/action_pedido_to_consulta"
+            app:destination="@id/consulta" />
+        <action
+            android:id="@+id/action_pedido_to_menuPedido"
+            app:destination="@id/menuPedido" />
+    </fragment>
+    <fragment
+        android:id="@+id/consulta"
+        android:name="com.example.sudhitime.consulta"
+        android:label="fragment_consulta"
+        tools:layout="@layout/fragment_consulta" />
+    <fragment
+        android:id="@+id/finicio"
+        android:name="com.example.sudhitime.Finicio"
+        android:label="fragment_finicio"
+        tools:layout="@layout/fragment_finicio" >
+        <action
+            android:id="@+id/action_finicio_to_consulta"
+            app:destination="@id/consulta" />
+        <action
+            android:id="@+id/action_finicio_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuPedido"
+        android:name="com.example.sudhitime.MenuPedido"
+        android:label="fragment_menu_pedido"
+        tools:layout="@layout/fragment_menu_pedido" >
+        <action
+            android:id="@+id/action_menuPedido_to_pedido"
+            app:destination="@id/pedido" />
+    </fragment>
+</navigation>
